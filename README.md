@@ -9,10 +9,10 @@
 Calculate the PAYE Summary based on hourly rate and the number of hours worked.
 
 ## Installation
->>> `pip install nzpaye`
+> `pip install nzpaye`
 
 ## Usage
->>> `nzpaye --hourly-rate 100 --hours-worked 40`
+> `nzpaye --hourly-rate 100 --hours-worked 40`
 
 Result is shown in the format:
 
@@ -25,4 +25,4 @@ Result is shown in the format:
 
 By default a withholding tax of 10% is used. You can change this.
 
->>> `nzpaye --hourly-rate 100 --hours-worked 40 --withholding-tax 20`
+> `nzpaye --hourly-rate 100 --hours-worked 40 --withholding-tax 20`
