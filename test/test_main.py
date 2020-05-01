@@ -7,12 +7,6 @@ class TestParser(unittest.TestCase):
     def setUp(self):
         self.parser = argument_parser.get_parser()
 
-    def test_default(self):
-        opts = self.parser.parse_args([])
-        self.assertEqual(opts.hourly_rate, None)
-        self.assertEqual(opts.hours_worked, None)
-        self.assertEqual(opts.witholding_tax, 10.0)
-
     def test_invalid_hours_worked(self):
         args = [
             "--hours-worked", "0",
