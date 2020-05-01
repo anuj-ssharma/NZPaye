@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.com/locustio/locust.svg?branch=master)](https://travis-ci.com/anuj-ssharma/PayeSummary)
+![GitHub](https://img.shields.io/github/license/anuj-ssharma/payesummary)
 
 # NZ PAYE Summary
 
