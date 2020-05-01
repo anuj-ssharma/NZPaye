@@ -5,12 +5,14 @@ def setup_parser_arguments(parser):
            '--hourly-rate',
             type=float,
             dest='hourly_rate',
+            required=True,
             help="Enter the hourly rate"
     )
     parser.add_argument(
             '--hours-worked',
             type=float,
             dest='hours_worked',
+            required=True,
             help='Enter the number of hours worked'
     )
     parser.add_argument(
