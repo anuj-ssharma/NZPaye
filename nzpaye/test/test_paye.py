@@ -1,6 +1,6 @@
 import unittest
-import paye
-from exception import ArgumentError
+from nzpaye import paye
+from nzpaye.exception import ArgumentError
 
 
 class TestPaye(unittest.TestCase):

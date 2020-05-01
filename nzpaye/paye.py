@@ -5,7 +5,7 @@ Income Threshold   Rate     PAYE
 70000               30      6600
 70000+              33      x
 """
-from exception import ArgumentError
+from nzpaye.exception import ArgumentError
 
 summary = {}
 

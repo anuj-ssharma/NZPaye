@@ -1,7 +1,8 @@
 import unittest
 
-import argument_parser
-from main import main, validate_argument_values
+from nzpaye import argument_parser
+from nzpaye.main import paye_summary, validate_argument_values
+
 
 class TestParser(unittest.TestCase):
     def setUp(self):
@@ -15,7 +16,7 @@ class TestParser(unittest.TestCase):
         opts = self.parser.parse_args(args)
         with self.assertLogs('paye', level='ERROR') as cm:
             with self.assertRaises(SystemExit):
-                main(opts)
+                paye_summary(opts)
         self.assertIn(cm.output[0], 'ERROR:paye:Hours worked should be greater than 0')
 
     def test_invalid_hourly_rate(self):
@@ -26,7 +27,7 @@ class TestParser(unittest.TestCase):
         opts = self.parser.parse_args(args)
         with self.assertLogs('paye', level='ERROR') as cm:
             with self.assertRaises(SystemExit):
-                main(opts)
+                paye_summary(opts)
         self.assertIn(cm.output[0], 'ERROR:paye:Hourly rate should be greater than 0')
 
     def test_invalid_witholding_tax(self):
@@ -39,7 +40,7 @@ class TestParser(unittest.TestCase):
 
         with self.assertLogs('paye', level='ERROR') as cm:
             with self.assertRaises(SystemExit):
-                main(opts)
+                paye_summary(opts)
         self.assertIn(cm.output[0], 'ERROR:paye:Witholding tax can be 10 or 20 ')
 
     def test_valid_values(self):

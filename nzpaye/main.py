@@ -1,9 +1,9 @@
 from tabulate import tabulate
-from paye import income_summary
+from nzpaye.paye import income_summary
 import sys
-import argument_parser
+from nzpaye import argument_parser
 import logging
-from log import setup_logging
+from nzpaye.log import setup_logging
 
 setup_logging("ERROR")
 logger = logging.getLogger("paye")
@@ -24,7 +24,7 @@ def validate_argument_values(options):
         sys.exit(1)
     return True
 
-def main(options):
+def paye_summary(options):
     try:
         validate_argument_values(options)
         summary = income_summary(options.hourly_rate, options.hours_worked, options.witholding_tax)
@@ -36,8 +36,3 @@ def main(options):
         logger.error(str(e))
         sys.exit(1)
 
-
-if __name__ == "__main__":
-    parser = argument_parser.get_parser()
-    options = parser.parse_args()
-    main(options)
