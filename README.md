@@ -1,11 +1,18 @@
 [![Build Status](https://travis-ci.com/locustio/locust.svg?branch=master)](https://travis-ci.com/anuj-ssharma/PayeSummary)
 ![GitHub](https://img.shields.io/github/license/anuj-ssharma/payesummary)
+![PyPI](https://img.shields.io/pypi/v/nzpaye)
+![PyPI - Python Version](https://img.shields.io/pypi/pyversions/nzpaye)
 
 # NZ PAYE Summary
 
-Calculate the PAYE Summary based on hourly rate. 
+## Overview
+Calculate the PAYE Summary based on hourly rate and the number of hours worked.
 
->>> `python main.py --hourly-rate 100 --hours-worked 40`
+## Installation
+>>> `pip install nzpaye`
+
+## Usage
+>>> `nzpaye --hourly-rate 100 --hours-worked 40`
 
 Result is shown in the format:
 
@@ -18,4 +25,4 @@ Result is shown in the format:
 
 By default a withholding tax of 10% is used. You can change this.
 
->>> `python main.py --hourly-rate 100 --hours-worked 40 --withholding-tax 20`
+>>> `nzpaye --hourly-rate 100 --hours-worked 40 --withholding-tax 20`
