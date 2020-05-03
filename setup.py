@@ -2,10 +2,10 @@ from setuptools import setup
 
 setup(
     name='nzpaye',
-    version='0.1.0',
+    version='0.1.1',
     description='NZ Paye Summary',
     long_description="""Calculate the NZ Paye Summary based on the hourly rate and the number of hours worked.""",
-    url='https://github.com/anuj-ssharma/PayeSummary',
+    url='https://github.com/anuj-ssharma/NZPaye',
     author='Anuj Sharma',
     author_email='anuj576@gmail.com',
     license='MIT',
