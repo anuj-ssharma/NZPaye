@@ -1,0 +1,40 @@
+{% extends "index.html" %}
+
+{% block content %}
+<div class="paye-summary">
+    <h2>PAYE Summary</h2>
+    <table class="table">
+        <tbody>
+        <tr class="table-primary">
+            <td>Total Income</td>
+            <td>${{summary.total_income}}</td>
+        </tr>
+        <tr class="table-danger">
+            <td>Less Witholding Tax</td>
+            <td>${{summary.less_witholding_tax}}</td>
+        </tr>
+        <tr class="table-danger">
+            <td>Remaining PAYE</td>
+            <td>${{summary.remaining_paye_to_be_paid}}</td>
+        </tr>
+        <tr class="table-success">
+            <td>Plus GST</td>
+            <td>${{summary.plus_gst}}</td>
+        </tr>
+        <tr class="table-success">
+            <td>Paid to Account</td>
+            <td>${{summary.paid_to_account}}</td>
+        </tr>
+        <tr class="table-danger">
+            <td>Remaining GST + PAYE</td>
+            <td>${{summary.remaining_gst_and_paye_to_be_paid}}</td>
+        </tr>
+
+        <tr class="table-success">
+            <td>Disposable Income</td>
+            <td>${{summary.disposable_income}}</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+{% endblock %}
