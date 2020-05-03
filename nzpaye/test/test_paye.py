@@ -35,3 +35,12 @@ class TestPaye(unittest.TestCase):
         with self.assertRaises(ArgumentError) as cm:
             paye.income_summary(hourly_rate=hourly_rate, hours_worked=hours_worked, witholding_tax=witholding_tax)
         self.assertTrue("Enter a valid value for witholding tax" in str(cm.exception) )
+
+    def test_yearly_paye(self):
+        self.assertEqual(paye.calculate_yearly_paye(10000),  1050.0)
+        self.assertEqual(paye.calculate_yearly_paye(14000),  1470.0)
+        self.assertEqual(paye.calculate_yearly_paye(20000),  2520.0)
+        self.assertEqual(paye.calculate_yearly_paye(48000),  7420.0)
+        self.assertEqual(paye.calculate_yearly_paye(65000),  12520.0)
+        self.assertEqual(paye.calculate_yearly_paye(70000),  14020.0)
+        self.assertEqual(paye.calculate_yearly_paye(100000), 23920.0)

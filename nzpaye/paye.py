@@ -22,8 +22,8 @@ def income_summary(hourly_rate, hours_worked, witholding_tax=10):
     # assuming working each week for 40 hours each year
     validate_params(hourly_rate, hours_worked, witholding_tax)
     yearly_income = hourly_rate * 40 * 52
-    remaining_paye = (33 / 100) * (yearly_income - 70000)
-    yearly_paye = 1470 + 5950 + 6600 + remaining_paye
+    yearly_paye = calculate_yearly_paye(yearly_income)
+
     hourly_paye = yearly_paye / (52 * 40)
 
     #assuming gst is 15%
@@ -47,3 +47,19 @@ def income_summary(hourly_rate, hours_worked, witholding_tax=10):
     summary['disposable_income'] = format(disposable_income, '.2f')
 
     return summary
+
+
+def calculate_yearly_paye(yearly_income):
+    yearly_paye = 0
+    if yearly_income > 0 and yearly_income <= 14000:
+        yearly_paye = yearly_paye + (0.105 * yearly_income)
+    if yearly_income > 14000 and yearly_income <= 48000:
+        yearly_paye = yearly_paye + 1470
+        yearly_paye = yearly_paye + (0.175 * (yearly_income - 14000))
+    if yearly_income > 48000 and yearly_income <= 70000:
+        yearly_paye = yearly_paye + 1470 + 5950
+        yearly_paye = yearly_paye + (0.3 * (yearly_income - 48000))
+    if yearly_income > 70000:
+        yearly_paye = yearly_paye + 1470 + 5950 + 6600
+        yearly_paye = yearly_paye + (0.33 * (yearly_income - 70000))
+    return yearly_paye
