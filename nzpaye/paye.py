@@ -44,15 +44,15 @@ def income_summary(hourly_rate, hours_worked, witholding_tax=10):
     remaining_gst_and_paye_to_be_paid = plus_gst + remaining_paye_to_be_paid
     disposable_income = paid_to_account - remaining_gst_and_paye_to_be_paid
 
-    summary['hours_worked'] = str(hours_worked)
-    summary['total_income'] = format(total_income, '.2f')
-    summary['total_paye'] = format(total_paye, '.2f')
-    summary['less_witholding_tax'] = format(less_witholding_tax, '.2f')
-    summary['plus_gst'] = format(plus_gst, '.2f')
-    summary['paid_to_account'] = format(paid_to_account, '.2f')
-    summary['remaining_paye_to_be_paid'] = format(remaining_paye_to_be_paid, '.2f')
-    summary['remaining_gst_and_paye_to_be_paid'] = format(remaining_gst_and_paye_to_be_paid, '.2f')
-    summary['disposable_income'] = format(disposable_income, '.2f')
+    summary['hours_worked'] = round(hours_worked, 2)
+    summary['total_income'] = round(total_income, 2)
+    summary['total_paye'] = round(total_paye, 2)
+    summary['less_witholding_tax'] = round(witholding_tax, 2)
+    summary['plus_gst'] = round(plus_gst, 2)
+    summary['paid_to_account'] = round(paid_to_account, 2)
+    summary['remaining_paye_to_be_paid'] = round(remaining_paye_to_be_paid, 2)
+    summary['remaining_gst_and_paye_to_be_paid'] = round(remaining_gst_and_paye_to_be_paid, 2)
+    summary['disposable_income'] = round(disposable_income, 2)
 
     return summary
 
