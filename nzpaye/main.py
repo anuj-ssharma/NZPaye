@@ -29,7 +29,7 @@ def paye_summary(options):
         validate_argument_values(options)
         summary = income_summary(options.hourly_rate, options.hours_worked, options.witholding_tax)
         print(tabulate([list(summary.values())],
-                       headers=["Hours Worked", "Total Income", "Less Witholding Tax (10%)", "Plus GST", "Paid to Account",
+                       headers=["Hours Worked", "Total Income", "Total Paye", "Less Witholding Tax", "Plus GST", "Paid to Account",
                                 "Remaining PAYE", "Remaining GST + PAYE", "Disposable Income"], tablefmt='pretty'))
     except Exception as e:
         logger.error("Oops something went wrong. ")
