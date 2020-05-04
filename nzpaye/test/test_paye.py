@@ -11,7 +11,8 @@ class TestPaye(unittest.TestCase):
         hourly_rate = 110
         hours_worked = 40
         summary = paye.income_summary(hourly_rate=hourly_rate, hours_worked=hours_worked)
-        self.assertEqual(summary, {"disposable_income":3122.62,"hours_worked":40,"less_witholding_tax":10,"paid_to_account":4620.0,"plus_gst":660.0,"remaining_gst_and_paye_to_be_paid":1497.38,"remaining_paye_to_be_paid":837.38,"total_income":4400,"total_paye":1277.38}
+        print(summary)
+        self.assertEqual(summary, {'hours_worked': 40, 'total_income': 4400, 'total_paye': 1277.38, 'less_witholding_tax': 440.0, 'plus_gst': 660.0, 'paid_to_account': 4620.0, 'remaining_paye_to_be_paid': 837.38, 'remaining_gst_and_paye_to_be_paid': 1497.38, 'disposable_income': 3122.62}
 )
 
 
